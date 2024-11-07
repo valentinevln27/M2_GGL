@@ -34,11 +34,11 @@ def have_a_map():
     m = create_map_port(country)
     return render_template('arctox.html', msg=m.get_root()._repr_html_())
 
-def create_map_port(param):
+def create_map_port(parametre):
     ports_filt = ports
-    if param != None:
+    if parametre != None:
         # Filtrer le dataframe sur le pays
-        ports_filt = ports[ports.state_1789_fr == param]
+        ports_filt = ports[ports.state_1789_fr == parametre]
         
     # Calculer le centre de la carte
     if (not ports_filt.empty) and (param != None):
